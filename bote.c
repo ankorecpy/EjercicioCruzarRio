@@ -79,8 +79,8 @@ void * Serf(void * tipo) {
 }
 
 void * Capitan(void * argumento) {
+	bajarSemaforo(&capitan);
 	while (1) {
-		bajarSemaforo(&capitan);
 		printf("\n--------PASAJEROS BAJANDO-----------\n");
 		bajarPasajeros();
 	}
@@ -108,7 +108,7 @@ void abandonar() {
 }
 
 void navegarBote() {
-	incrementarSemaforo(&capitan, 2);
+	subirSemaforo(&capitan);
 }
 
 void bajarPasajeros() {
